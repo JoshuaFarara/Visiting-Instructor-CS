@@ -10,12 +10,22 @@ import java.util.Scanner;
 public class IceBreaker {
 
 	public static void main(String[] args) {	
+		// Initialize an Array to store rosters
+//		String[] rosters = new String[4];	        
+		File roster1301A = new File("H:\\git\\Visiting-Instructor-CS\\src\\roster1301A");
+		
 		// Initialize an ArrayList to dynamically store names
         ArrayList<String> namesList = new ArrayList<>();
+       
         
-		try {
-			 	File file = new File("H:\\git\\Visiting-Instructor-CS\\src\\roster1301A");
-	            Scanner scanner = new Scanner(file);
+        try {
+//	        	Scanner input = new Scanner(System.in);	
+//	        	System.out.println("Select a roster: ");
+//	        	int rosterSelection = input.nextInt();	
+        	//	File file = new File(roster1301A);
+        		
+//	            if (rosterSelection)
+        		Scanner scanner = new Scanner(roster1301A);
 	            while (scanner.hasNextLine()) {
 	                String studentName = scanner.nextLine().trim();
 	                namesList.add(studentName);
@@ -29,14 +39,14 @@ public class IceBreaker {
 		String[] roster = namesList.toArray(new String[0]); 
 		
 		// Print the roster array to confirm contents
-		System.out.println("Roster: " + Arrays.toString(roster));
+//		System.out.println("Roster: " + Arrays.toString(roster));
 
 		System.out.println("Let's Break The Ice!");
 		// Get a random student name and print it
 		System.out.println(getStudentName(roster));
 		
-		String[] shuffledRoster = shuffleStudents(roster);
-		System.out.println(Arrays.toString(shuffledRoster));
+//		String[] shuffledRoster = shuffleStudents(roster);
+//		System.out.println(Arrays.toString(shuffledRoster));
 	
 		
 		
@@ -74,3 +84,18 @@ public class IceBreaker {
 	
 
 }
+
+/*Improvement Features:
+ 	* Chooses people absent.
+ 		* Implement a feature to take role call.
+ 	* Chooses same person multiple time.
+ 		* Implement a data structure that will store students selected
+ 	* Dynamically select different rosters files for the IceBreaker program
+ 	* Create a GUI for the Program
+*/ 
+
+/*
+ * Future Features
+ * 
+ */
+ 
